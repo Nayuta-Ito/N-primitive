@@ -239,11 +239,11 @@ def expand(array, base):
                     for j in range(0, len(a[m].non_principal[i])):
                         #i-q>=0であることは7行上のif文で保障されている
                         amiqj = a[m].non_principal[i-q][j]
-                        ami = a[m].term[i]
-                        amiq = a[m].term[i-q]
+                        ami1 = a[m].term[i-1]
+                        ami1q = a[m].term[i-1-q]
                         di = a[m+1][i] #a[m+1]はList
                         diq = a[m+1][i-q]
-                        a[m].non_principal[i][j] = amiqj + ami - amiq + di - diq
+                        a[m].non_principal[i][j] = amiqj + ami1 - ami1q + di - diq
             print("i:",i)
             print("a[m+1]:",a[m+1])
             print("a[m]:",a[m])
@@ -252,7 +252,7 @@ def expand(array, base):
     print("p',q':", pdash, qdash)
     return a[0][:(pdash + base * qdash)]
     
-list = [0,1,3,3]
+list = [0,1,2,3,2]
 base = 3
 '''
 #乱数で値を入れる。「ある程度の」確率で原始数列の標準形が現れる。
