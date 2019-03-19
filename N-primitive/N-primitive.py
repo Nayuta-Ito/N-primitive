@@ -1,4 +1,4 @@
-#Python版 Am schnellsteren (N1.1)
+#Python版 Am schnellsteren (N1.1.π)
 
 import copy
 
